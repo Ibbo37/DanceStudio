@@ -3,13 +3,14 @@ import bodyParser from "body-parser";
 import { DBConnect } from "./DBConnect.js";
 import { Register, Login } from "./controller/user.controller.js"
 import dotenv from "dotenv";
+import cors from "cors"
 const app = express();
 const port = 5000;
 
 dotenv.config();
 // Use body-parser to parse JSON data
 app.use(bodyParser.json());  
-
+app.use(cors());
 // Connect to the database
 DBConnect();
 
